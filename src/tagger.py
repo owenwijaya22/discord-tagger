@@ -2,10 +2,10 @@ import requests
 import random
 import json
 
-
+# this function is for importing tokens from config.json
 def choose_token():
-    token = "OTI1MjM0NjY4MDc5NTcwOTQ0.YcqKIg.oR-TjoCwci2N_gMekjkWSpS3he4"
-    #token = random.choice(["OTI1MjM0NjY4MDc5NTcwOTQ0.YcqKIg.oR-TjoCwci2N_gMekjkWSpS3he4"])
+    tokens = json.load('../config.json', 'r')["tokens"]
+    token = random.choice(tokens)
     return token
 
 
