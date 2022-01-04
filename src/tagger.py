@@ -4,9 +4,10 @@ import json
 
 # this function is for importing tokens from config.json
 def choose_token():
-    tokens = json.load('../config.json', 'r')["tokens"]
-    token = random.choice(tokens)
-    return token
+    with open('config.json', 'r') as f:
+        tokens = json.load(f)["tokens"]
+        token = random.choice(tokens)
+        return token
 
 
 def choose_url():
